@@ -17,7 +17,7 @@ const CurrencyConverter = () => {
       try {
         const apiKey = 'YOUR_API_KEY'; // Replace with your Currency Layer API key
         const response = await axios.get(
-          `https://api.currencylayer.com/live?access_key=${apiKey}&currencies=${targetCurrency}`
+          `https://open.er-api.com/v6/latest/${sourceCurrency}?apikey=${apiKey}`
         );
         const rate = response.data.quotes[`USD${targetCurrency}`];
         setConversionRate(rate);
